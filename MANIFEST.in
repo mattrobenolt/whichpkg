@@ -1,1 +1,1 @@
-include setup.py README.md LICENSE MANIFEST.in
+include setup.py README.md LICENSE MANIFEST.in setup.cfg
