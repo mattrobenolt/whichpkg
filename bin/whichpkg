@@ -16,7 +16,7 @@ if __name__ == '__main__':
             sys.stdout.write(__import__(pkg).__path__[0])
             sys.stdout.write('\n')
         except ImportError:
-            sys.stdout.write('{0} not found\n'.format(pkg))
+            sys.stderr.write('{0} not found\n'.format(pkg))
             failed = True
 
     if failed:
