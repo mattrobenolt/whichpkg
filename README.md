@@ -1,6 +1,6 @@
 # whichpkg
 ## Locate the path of a specific python module
-Should work exactly like `which`.
+If you're at all like me, you're always needing to open up and look at the source code of installed packages and it required more process than I liked to just determine their path.
 
 ### Installation
 `$ pip install whichpkg`
