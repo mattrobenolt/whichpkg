@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
-__version__ = '0.2.0'
+__version__ = '0.3.0'
 
 
 if __name__ == '__main__':
     import sys
+    import re
 
     if len(sys.argv) == 1:
         sys.exit(0)
@@ -13,8 +14,10 @@ if __name__ == '__main__':
 
     for pkg in sys.argv[1:]:
         try:
-            sys.stdout.write(__import__(pkg).__path__[0])
-            sys.stdout.write('\n')
+            f = __import__(pkg).__file__
+            f = re.sub(r'\.pyc$', '.py', f)  # .pyc to .py
+            f = re.sub(r'__init__\.py$', '', f)  # Drop an __init__.py
+            sys.stdout.write('{0}\n'.format(f))
         except ImportError:
             sys.stderr.write('{0} not found\n'.format(pkg))
             failed = True
