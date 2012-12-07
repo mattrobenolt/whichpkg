@@ -9,7 +9,7 @@ from setuptools import setup
 
 setup(
     name='whichpkg',
-    version='0.1.0',
+    version='0.2.0',
     author='Matt Robenolt',
     author_email='matt@ydekproductions.com',
     url='https://github.com/mattrobenolt/whichpkg',
