@@ -5,11 +5,14 @@ whichpkg
 Locate the path of a specific python module
 """
 
+import re
 from setuptools import setup
+
+version = re.search("__version__\s*=\s*'(.+)?'", open('bin/whichpkg').read()).groups(1)[0]
 
 setup(
     name='whichpkg',
-    version='0.3.0',
+    version=version,
     author='Matt Robenolt',
     author_email='matt@ydekproductions.com',
     url='https://github.com/mattrobenolt/whichpkg',
